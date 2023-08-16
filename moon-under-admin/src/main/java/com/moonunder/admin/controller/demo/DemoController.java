@@ -1,5 +1,6 @@
-package com.moonunder.web;
+package com.moonunder.admin.controller.demo;
 
+import com.moonunder.common.core.dto.ResponseDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author simon
  */
-@RestController()
+@RestController
 @RequestMapping("/demo")
 public class DemoController {
   @GetMapping
-  public String getDemo() {
-    return "Hello Demo";
+  public ResponseDTO<String> getDemo() {
+    return ResponseDTO.ok("Hello Demo");
   }
 }

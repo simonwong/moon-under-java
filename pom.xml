@@ -24,8 +24,9 @@
 	</dependencies>
 
 	<modules>
-		<module>moon-under-starter</module>
-		<module>moon-under-web</module>
+		<module>moon-under-admin</module>
+		<module>moon-under-infrastructure</module>
+		<module>moon-under-common</module>
 	</modules>
 
 	<build>
