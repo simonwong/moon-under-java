@@ -27,6 +27,7 @@
 		<module>moon-under-admin</module>
 		<module>moon-under-infrastructure</module>
 		<module>moon-under-common</module>
+		<module>moon-under-domain</module>
 	</modules>
 
 	<build>
