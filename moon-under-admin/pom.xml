@@ -22,13 +22,13 @@
     <dependencies>
         <dependency>
             <groupId>com.moonunder</groupId>
-            <artifactId>moon-under-infrastructure</artifactId>
+            <artifactId>moon-under-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.moonunder</groupId>
-            <artifactId>moon-under-common</artifactId>
+            <artifactId>moon-under-infrastructure</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -1,0 +1,7 @@
+# Mybatis 配置
+#mybatis-plus:
+#  mapperLocations: classpath*:mapper/**/*Mapper.xml
+#  configuration:
+#    cacheEnabled: true
+#    useGeneratedKeys: true
+#    defaultExecutorType: SIMPLE

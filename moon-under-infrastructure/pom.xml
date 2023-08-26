@@ -19,29 +19,17 @@
 
 
   <dependencies>
+<!--    web-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
       <version>3.1.2</version>
     </dependency>
-
+<!--    aop-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
       <version>3.1.2</version>
-    </dependency>
-
-<!--    <dependency>-->
-<!--      <groupId>com.baomidou</groupId>-->
-<!--      <artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--      <version>3.5.3.2</version>-->
-<!--    </dependency>-->
-
-<!--    common 模块-->
-    <dependency>
-      <groupId>com.moonunder</groupId>
-      <artifactId>moon-under-common</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
