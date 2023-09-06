@@ -7,6 +7,7 @@ import com.moonunder.domain.demo.dto.DemoDTO;
 import com.moonunder.domain.demo.query.DemoQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,11 @@ public class DemoController {
   public ResponseDTO<PageDTO<DemoDTO>> getDemoList() {
     PageDTO<DemoDTO> demoList = demoApplicationService.getDemoList(new DemoQuery());
     return ResponseDTO.ok(demoList);
+  }
+
+  @GetMapping("/info/{demoId}")
+  public ResponseDTO<DemoDTO> getDemoInfo(@PathVariable("demoId") Long demoId) throws Exception {
+    DemoDTO demoDTO = demoApplicationService.getDemoInfoById(demoId);
+    return ResponseDTO.ok(demoDTO);
   }
 }
