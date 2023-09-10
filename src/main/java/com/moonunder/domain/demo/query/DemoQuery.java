@@ -7,6 +7,6 @@ import lombok.Data;
  */
 @Data
 public class DemoQuery {
-
+  private Long demoId;
   private String demoName;
 }

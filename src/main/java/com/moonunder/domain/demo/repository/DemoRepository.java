@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 /**
  * @author simon
  */
-public interface DemoRepository extends JpaSpecificationExecutor<DemoEntity>, JpaRepository<DemoEntity, Long> {
+public interface DemoRepository extends JpaRepository<DemoEntity, Long>, JpaSpecificationExecutor<DemoEntity> {
 
 }
