@@ -30,13 +30,15 @@ public class DemoApplicationService {
     Pageable pageable = PageRequest.of(demoPageQuery.getPageNum() - 1, demoPageQuery.getPageSize());
 
     Specification<DemoEntity> spec = (root, query, cb) -> {
-      Optional<DemoQuery> demoQuery = demoPageQuery.getCondition();
+      DemoQuery demoQuery = demoPageQuery.getCondition();
       List<Predicate> predicates = new ArrayList<>();
-      if (demoQuery.map(DemoQuery::getDemoName).orElse(null) != null) {
-        predicates.add(cb.like(root.get("demoName"), "%" + demoQuery.map(DemoQuery::getDemoName) + "%"));
-      }
-      if (demoQuery.map(DemoQuery::getDemoId).orElse(null) != null) {
-        predicates.add(cb.equal(root.get("demoId"), demoQuery.map(DemoQuery::getDemoId)));
+      if (demoQuery != null) {
+        if (demoQuery.getDemoName() != null) {
+          predicates.add(cb.like(root.get("demoName"), "%" + demoQuery.getDemoName() + "%"));
+        }
+        if (demoQuery.getDemoId() != null) {
+          predicates.add(cb.equal(root.get("demoId"), demoQuery.getDemoId()));
+        }
       }
       return cb.and(predicates.toArray(new Predicate[0]));
     };

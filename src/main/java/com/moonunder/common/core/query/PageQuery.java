@@ -1,6 +1,5 @@
 package com.moonunder.common.core.query;
 
-import java.util.Optional;
 import lombok.Data;
 
 /**
@@ -8,7 +7,7 @@ import lombok.Data;
  */
 @Data
 public class PageQuery<T> {
-  Optional<T> condition;
+  T condition;
   int pageSize;
   int pageNum;
 }
