@@ -34,4 +34,10 @@ public class DemoController {
     DemoDTO demoDTO = demoApplicationService.getDemoInfoById(demoId);
     return ResponseDTO.ok(demoDTO);
   }
+
+  @PostMapping("/add")
+  public ResponseDTO<DemoDTO> addNewDemo(@RequestBody DemoDTO demoDTO) throws Exception {
+    DemoDTO demoDtoRes = demoApplicationService.addNewDemo(demoDTO);
+    return ResponseDTO.ok(demoDtoRes);
+  }
 }

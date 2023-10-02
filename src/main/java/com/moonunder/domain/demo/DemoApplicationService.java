@@ -54,4 +54,9 @@ public class DemoApplicationService {
 
     return DemoMapStruct.INSTANCE.demoConvert(demoEntity.orElseThrow(() -> new Exception("demoId 不存在")));
   }
+
+  public DemoDTO addNewDemo(DemoDTO demoDTO) throws Exception {
+    DemoEntity demoEntityRes = demoRepository.save(DemoMapStruct.INSTANCE.demoConvert(demoDTO));
+    return DemoMapStruct.INSTANCE.demoConvert(demoEntityRes);
+  }
 }

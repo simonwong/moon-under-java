@@ -4,6 +4,7 @@ import com.moonunder.common.core.base.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -26,7 +27,7 @@ public class DemoEntity extends BaseEntity {
 
   // demo id
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long demoId;
 
   // demo 分类

@@ -16,6 +16,9 @@ public interface DemoMapStruct {
 
   DemoDTO demoConvert(DemoEntity demoEntity);
 
+
+  DemoEntity demoConvert(DemoDTO demoDTO);
+
   List<DemoDTO> demoListConvert(List<DemoEntity> demoEntityList);
 
   default YesOrNoEnum map(int value) {
@@ -23,5 +26,11 @@ public interface DemoMapStruct {
       return YesOrNoEnum.YES;
     }
     return YesOrNoEnum.NO;
+  }
+  default int map(YesOrNoEnum yesOrNoEnum) {
+    if (yesOrNoEnum == YesOrNoEnum.YES) {
+      return 1;
+    }
+    return 0;
   }
 }

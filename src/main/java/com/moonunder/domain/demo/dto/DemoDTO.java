@@ -1,7 +1,7 @@
 package com.moonunder.domain.demo.dto;
 
+import com.moonunder.common.core.dto.BaseDTO;
 import com.moonunder.common.enums.common.YesOrNoEnum;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class DemoDTO {
+public class DemoDTO extends BaseDTO {
   private String demoName;
 
   private Long demoId;
@@ -20,6 +20,4 @@ public class DemoDTO {
   private YesOrNoEnum active;
 
   private String remark;
-
-  private Date createTime;
 }

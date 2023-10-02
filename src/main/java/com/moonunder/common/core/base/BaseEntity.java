@@ -13,18 +13,18 @@ import lombok.Setter;
 @Setter
 public class BaseEntity {
   // 创建者ID
-  @Column(nullable = false)
+  @Column
   private Long creatorId;
 
   // 创建时间
-  @Column(nullable = false)
+  @Column
   private Date createTime;
 
   // 更新者ID
-  @Column(nullable = false)
+  @Column
   private Long updaterId;
 
   // 更新时间
-  @Column(nullable = false)
+  @Column
   private Date updateTime;
 }
