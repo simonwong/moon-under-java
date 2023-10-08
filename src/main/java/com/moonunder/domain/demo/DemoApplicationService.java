@@ -59,4 +59,14 @@ public class DemoApplicationService {
     DemoEntity demoEntityRes = demoRepository.save(DemoMapStruct.INSTANCE.demoConvert(demoDTO));
     return DemoMapStruct.INSTANCE.demoConvert(demoEntityRes);
   }
+
+  public void deleteDemo(long demoId) throws Exception {
+    ArrayList<Long> deleteIds = new ArrayList<>();
+    deleteIds.add(demoId);
+    demoRepository.deleteAllById(deleteIds);
+  }
+
+  public void deleteDemo(ArrayList<Long> demoIdList) throws Exception {
+    demoRepository.deleteAllById(demoIdList);
+  }
 }

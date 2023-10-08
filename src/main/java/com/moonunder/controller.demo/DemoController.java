@@ -7,9 +7,11 @@ import com.moonunder.domain.demo.DemoApplicationService;
 import com.moonunder.domain.demo.dto.DemoDTO;
 import com.moonunder.domain.demo.query.DemoQuery;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,9 +37,15 @@ public class DemoController {
     return ResponseDTO.ok(demoDTO);
   }
 
-  @PostMapping("/add")
+  @PutMapping("/add")
   public ResponseDTO<DemoDTO> addNewDemo(@RequestBody DemoDTO demoDTO) throws Exception {
     DemoDTO demoDtoRes = demoApplicationService.addNewDemo(demoDTO);
     return ResponseDTO.ok(demoDtoRes);
+  }
+
+  @DeleteMapping("/delete/{demoId}")
+  public ResponseDTO<Boolean> deleteDemo(@PathVariable("demoId") Long demoId) throws Exception {
+    demoApplicationService.deleteDemo(demoId);
+    return ResponseDTO.ok(true);
   }
 }
