@@ -39,7 +39,13 @@ public class DemoController {
 
   @PutMapping("/add")
   public ResponseDTO<DemoDTO> addNewDemo(@RequestBody DemoDTO demoDTO) throws Exception {
-    DemoDTO demoDtoRes = demoApplicationService.addNewDemo(demoDTO);
+    DemoDTO demoDtoRes = demoApplicationService.saveOrUpdateDemo(demoDTO);
+    return ResponseDTO.ok(demoDtoRes);
+  }
+
+  @PutMapping("/update")
+  public ResponseDTO<DemoDTO> updateDemo(@RequestBody DemoDTO demoDTO) throws Exception {
+    DemoDTO demoDtoRes = demoApplicationService.saveOrUpdateDemo(demoDTO);
     return ResponseDTO.ok(demoDtoRes);
   }
 
